@@ -1,0 +1,7 @@
+package com.lteixeira.poctestcontainers.repository;
+
+import com.lteixeira.poctestcontainers.model.Category;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CategoryRepository extends JpaRepository<Category, Long> {
+}
