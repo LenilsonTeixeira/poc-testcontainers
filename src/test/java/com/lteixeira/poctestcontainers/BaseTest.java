@@ -1,6 +1,7 @@
 package com.lteixeira.poctestcontainers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -10,7 +11,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @AutoConfigureMockMvc
 @ExtendWith(SpringExtension.class)
-@ExtendWith(PostgresTestContainersBasicConfiguration.class)
+@ExtendWith(PostgresTestContainersExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public abstract class BaseTest {
 
@@ -18,4 +19,9 @@ public abstract class BaseTest {
 
     @Autowired
     protected MockMvc mockMvc;
+
+    @BeforeEach
+    public void setup() {
+        System.out.println("Rodando antes de cada teste");
+    }
 }

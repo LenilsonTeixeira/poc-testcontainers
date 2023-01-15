@@ -10,7 +10,7 @@ import org.testcontainers.utility.DockerImageName;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @Testcontainers
-public class PostgresTestContainersBasicConfiguration implements BeforeAllCallback {
+public class PostgresTestContainersExtension implements BeforeAllCallback {
 
     private static AtomicBoolean containerStarted = new AtomicBoolean(false);
     @Container
